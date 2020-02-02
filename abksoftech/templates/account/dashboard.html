@@ -1,0 +1,273 @@
+{% extends 'account/base.html' %}
+{% block title %} abksoftech {% endblock %}
+{% block css %}
+
+/*Downloaded from https://www.codeseek.co/FlyingEmu/jarvis-elements-cjBzr */
+
+
+.core {
+background: #cedce0;
+width: 100px;
+height: 100px;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+border: 10px rgba(2, 255, 255, 0.15) solid;
+animation: flicker 0.2s infinite;
+margin-left: auto;
+margin-right: auto;
+margin-top: 40px;
+}
+
+.c_ease {
+animation: colour_ease 3s infinite ease-in-out;
+}
+
+.counterspin5 {
+animation: rotate_anti 5s linear infinite;
+}
+
+.counterspin4 {
+animation: rotate_anti 4s linear infinite;
+}
+
+.semi_arc {
+width: 100px;
+height: 100px;
+border: 6px solid #02feff;
+background: rgba(2, 254, 255, 0.2);
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+transform: rotateZ(0deg);
+transition: box-shadow 3s ease;
+text-align: center;
+line-height: 100px;
+}
+
+.semi_arc:hover {
+box-shadow: 0px 0px 30px rgba(2, 254, 255, 0.8);
+transition: 0.3s;
+}
+
+.semi_arc_3 {
+content: "";
+position: absolute;
+width: 94%;
+height: 94%;
+left: 3%;
+top: 3%;
+border: 5px solid #02feff;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+animation: rotate 4s linear infinite;
+text-align: center;
+line-height: 129px;
+}
+
+.e5_1 {
+color: rgba(2, 255, 255, 0.15);
+border: 2px solid;
+border-left: 2px solid transparent;
+animation: rotate 5s linear infinite;
+}
+
+.e5_2 {
+color: rgba(2, 255, 255, 0.7);
+border: 4px solid;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+animation: rotate_anti 4s linear infinite;
+}
+
+.e5_3 {
+color: rgba(2, 255, 255, 0.5);
+border: 2px solid;
+border-left: 2px solid transparent;
+border-right: 2px solid transparent;
+animation: rotate 3s linear infinite;
+}
+
+.e5_4 {
+color: rgba(2, 255, 255, 0.15);
+border: 4px solid;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-bottom: 4px solid transparent;
+animation: rotate_anti 2s linear infinite;
+}
+
+.e6 {
+border-color: transparent;
+background: rgba(255, 255, 255, 0);
+width: 200px;
+height: 200px;
+}
+
+@keyframes rotate {
+0% {
+transform: rotateZ(0deg);
+}
+100% {
+transform: rotateZ(360deg);
+}
+}
+@keyframes rotate_anti {
+0% {
+transform: rotateZ(360deg);
+}
+100% {
+transform: rotateZ(0deg);
+}
+}
+@keyframes colour_ease {
+0% {
+border-color: #02feff;
+}
+50% {
+border-color: rgba(2, 254, 255, 0.5);
+}
+100% {
+border-color: #02feff;
+}
+}
+@keyframes flicker {
+0% {
+box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+40% {
+box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+50% {
+box-shadow: 0px 0px 16px 6px rgba(150, 255, 255, 0.5), inset 0px 1px 100px 2px rgba(21, 211, 233, 0.3);
+}
+60% {
+box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+100% {
+box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+}
+@keyframes flicker2 {
+0% {
+box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+40% {
+box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+50% {
+box-shadow: 0px 0px 50px 17px rgba(150, 255, 255, 0.5), inset 0px 1px 100px 2px rgba(21, 211, 233, 0.3);
+}
+60% {
+box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+100% {
+box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+}
+}
+@keyframes big_flicker {
+0% {
+box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+40% {
+box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+50% {
+box-shadow: 0px 0px 35px 17px rgba(150, 255, 255, 0.5), inset 0px 1px 50px 40px rgba(21, 211, 233, 0.3);
+}
+60% {
+box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+100% {
+box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+}
+
+{% endblock %}
+{% block jsscript %}
+$(document).ready(function(){
+document.getElementById("profile").addEventListener("click", function (evt) {
+$( "#containt" ).show(function() {
+// Animation complete.
+Profile();
+});
+});
+document.getElementById("inbox").addEventListener("click", function (evt) {
+$( "#containt" ).show(function() {
+// Animation complete.
+Inbox();
+});
+});
+});
+function Profile() {
+$( "#containt" ).load("/profile");
+}
+function Inbox() {
+$( "#containt" ).load("/inbox");
+} 
+{% endblock %}
+{% block body %}
+{% load static %}
+<!-- Icon Cards-->
+<div class="container">
+	<div class="row">
+		<div class="col-xl-3 col-sm-6 mb-3">
+			<div class="card text-white bg-primary o-hidden h-100">
+				<div class="card-body">
+					<div class="card-body-icon">
+						<i class="fas fa-fw fa-comments"></i>
+					</div>
+					<div class="mr-5">26 New Messages!</div>
+				</div>
+				<a class="card-footer text-white clearfix small z-1" href="#" id="inbox">
+					<span class="float-left">View Details</span>
+					<span class="float-right">
+						<i class="fas fa-angle-right"></i>
+					</span>
+				</a>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6 mb-3">
+			<div class="card text-white bg-dark o-hidden h-100">
+				<div class="card-body">
+					<div class="card-body-icon">
+						<i class="fas fa-glasses"></i>
+					</div>
+					<div class="mr-5">11 New Visitors!</div>
+				</div>
+				<a class="card-footer text-white clearfix small z-1" href="#" id="inbox">
+					<span class="float-left">View Details</span>
+					<span class="float-right">
+						<i class="fas fa-angle-right"></i>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="containt">
+	<div style="float: left; min-width: 500px; margin: 40%; margin-top: 7%">
+
+		<div style="float: left;">
+			<div class="semi_arc e6">
+				<div class="semi_arc_3 e5_1">
+					<div class="semi_arc_3 e5_2">
+						<div class="semi_arc_3 e5_3">
+							<div class="semi_arc_3 e5_4">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="core">
+					<h2 class="my-4" style="color: black">abk</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

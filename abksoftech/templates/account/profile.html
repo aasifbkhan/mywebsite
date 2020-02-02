@@ -1,0 +1,103 @@
+{% load static %}
+<div class="container">
+  <div class="col-md-9">
+  <div class="card shadow p-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-9">
+          <h4>{{profile.0.profile_firstname}} {{profile.0.profile_lastname}}</h4>
+          <p>Email: {{profile.0.profile_email}}</p>
+          <p>Contact: +91 {{profile.0.profile_contact}}</p>
+        </div>
+        <div class="col-md-3">
+            <img class="shadow" src="{%static 'abksoftech/images/profile.jpg' %}" width="110px" height="110px">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group row">
+              <label for="username" class="col-4 col-form-label">User Name*</label> 
+              <div class="col-8">
+                <input id="username" name="username" placeholder="Username" class="form-control here" required="required" value="{{profile.0.profile_username}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="name" class="col-4 col-form-label">First Name</label> 
+              <div class="col-8">
+                <input id="name" name="name" placeholder="First Name" class="form-control here" required="required" value="{{profile.0.profile_firstname}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="lastname" class="col-4 col-form-label">Last Name</label> 
+              <div class="col-8">
+                <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" required="required" value="{{profile.0.profile_lastname}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-4 col-form-label">Email*</label> 
+              <div class="col-8">
+                <input id="email" name="email" placeholder="Email" class="form-control here" required="required" value="{{profile.0.profile_email}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="contact" class="col-4 col-form-label">Contact*</label> 
+              <div class="col-8">
+                <input id="contact" name="contact" placeholder="Contact" class="form-control here" required="required" value="{{profile.0.profile_contact}}" type="tel">
+              </div>
+            </div>
+             <div class="form-group row">
+              <label for="github" class="col-4 col-form-label">GitHub</label> 
+              <div class="col-8">
+                <input id="github" name="github" placeholder="Enter the link here https://github.com" class="form-control here" required="required" value="{{profile.0.profile_github}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="twitter" class="col-4 col-form-label">Twitter</label> 
+              <div class="col-8">
+                <input id="twitter" name="twitter" placeholder="Enter the link here https://twitter.com" class="form-control here" required="required" value="{{profile.0.profile_twitter}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="instagram" class="col-4 col-form-label">Instagram</label> 
+              <div class="col-8">
+                <input id="instagram" name="instagram" placeholder="Enter the link here https://instagram.com" class="form-control here" required="required" value="{{profile.0.profile_instagram}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="facebook" class="col-4 col-form-label">Facebook</label> 
+              <div class="col-8">
+                <input id="facebook" name="facebook" placeholder="Enter the link here https://facebook.com" class="form-control here" required="required" value="{{profile.0.profile_facebook}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="linkedin" class="col-4 col-form-label">Linkedin</label> 
+              <div class="col-8">
+                <input id="linkedin" name="linkedin" placeholder="Enter the link here https://linkedin.com" class="form-control here" required="required" value="{{profile.0.profile_linkedin}}" type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="aboutyou" class="col-4 col-form-label">About You</label> 
+              <div class="col-8">
+                <textarea id="aboutyou" name="aboutyou" cols="40" rows="5" class="form-control" required="required" value="{{profile.0.profile_about}}"></textarea>
+              </div>
+            </div>
+            <!-- <div class="form-group row">
+              <label for="newpass" class="col-4 col-form-label">New Password</label> 
+              <div class="col-8">
+                <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+              </div>
+            </div>  -->
+            <div class="form-group row">
+              <div class="offset-4 col-8">
+                <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

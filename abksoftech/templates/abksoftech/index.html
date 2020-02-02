@@ -1,0 +1,172 @@
+{% extends 'abksoftech/basic.html' %}
+{% block title %} abksoftech {% endblock %}
+{% block css %}
+.carousel inner{
+width:100%;
+height:100%;
+}
+.carousel-caption {
+top: 35%;
+background: rgba(0, 0, 0, 0.5);
+bottom: auto;
+}
+p{
+font-family: cursive;
+}
+{% endblock %}
+{% block jsscript %}
+
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+	<strong>Welcome to abksoftech!</strong> Here you can know about me.
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<section>
+	<div class="container-fluid">
+		<div class="bd-example">
+			<div id="carouselExampleCaptions" class="carousel slide fade-carousel carousel-fade" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+					{% for i in range %}
+					<li data-target="#carouselExampleCaptions" data-slide-to="{{i}}"></li>
+					{% endfor %}
+					<!-- <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active item-center">
+						<img src="/media/{{banner.0.banner_img}}" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<img src="{%static 'abksoftech/images/l1.png' %}" width="150px" height="150px">
+							<h2 class="font-weight-bold display-3">abk {{banner.0.banner_name}}</h2>
+							<p>{{banner.0.banner_desc}}</p>
+						</div>
+					</div>
+					{% for i in banner|slice:"1:" %}
+					<div class="carousel-item">
+						<img src="/media/{{i.banner_img}}" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h1 class="font-weight-bold display-4">{{i.banner_name}}</h1>
+							<p>{{i.banner_desc}}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Cards -->
+<section>
+	<div class="container my-4">
+		<div class="row">
+			<div class="col-md-4 my-1">
+				<div class="card shadow p-3" style="width: 18rem;">
+					<img src="{%static 'abksoftech/images/python.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">abksoftech.com</h5>
+						<p class="card-text">We created our own web site with the help of django and python.</p>
+						<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 my-1">
+				<div class="card shadow p-3" style="width: 18rem;">
+					<img src="{%static 'abksoftech/images/java.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">Medical Store Management System</h5>
+						<p class="card-text">We created stand alon application using JAVA & one JSP project is under process</p>
+						<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 my-1">
+				<div class="card shadow p-3" style="width: 18rem;">
+					<img src="{%static 'abksoftech/images/cpp.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">Face Detection Program</h5>
+						<p class="card-text">We created face detection program in c++ using openCV, now we will continue this project on python</p>
+						<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- About Us -->
+<section id="about" style="background-color: #e6f7ff;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div>
+					<img class="shadow p-1" src="{%static 'abksoftech/images/profile.jpg' %}" width="375" height="400">
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="shadow p-3 mx-5" style="background-color: white;">
+					<h1 class="display-4">AboutUs</h1>
+					<p style="font-size: x-large;">{{profile.0.profile_about}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section><br>
+
+<!-- contact us -->
+<section id="contact">
+	<div class="container my-4">
+		<div class="row my-4">
+			<div class="col-md-7">
+				<div class="jumbotron jumbotron-fluid shadow p-3">
+					<div class="container">
+						<h1 class="display-4">ContactUs</h1>
+						<label>Email : </label><p class="lead font-weight-bold">{{profile.0.profile_email}}</p>
+						<label>Call ot Text :</label><p class="lead font-weight-bold"><i class="fab fa-whatsapp"></i> +91 {{profile.0.profile_contact}}</p>
+						<label>Join & Follow : </label>
+						<div class="row">
+							<a href="{{profile.0.profile_github}}" class="lead font-weight-bold mx-1"><i class="fab fa-github"></i></a>
+							<a href=" {{profile.0.profile_twitter}}" class="lead font-weight-bold mx-1"><i class="fab fa-twitter"></i></a>
+							<a href="{{profile.0.profile_instagram}}" class="lead font-weight-bold mx-1"><i class="fab fa-instagram"></i></a>
+							<a href="{{profile.0.profile_facebook}}" class="lead font-weight-bold mx-1"><i class="fab fa-facebook-f" ></i></a>
+							<a href="{{profile.0.profile_linkedin}}" class="lead font-weight-bold mx-1"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="card shadow p-3 rounded-sm mx-auto col-md-5">
+				<div class="card-header font-weight-bold text-center">
+					Send Message
+				</div>
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<label for="inputName">Name</label>
+							<input type="name" class="form-control" id="inputName" placeholder="Enter Your Full Name">
+						</div>
+						<div class="form-group">
+							<label for="inputEmail4">Email</label>
+							<input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlTextarea1">Description</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer text-muted">
+
+				</div>
+			</div> -->
+		</div>
+	</div>
+</section>
+{% endblock %}
