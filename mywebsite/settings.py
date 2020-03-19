@@ -25,7 +25,7 @@ SECRET_KEY = 'fysd_7&j9c@g9i4mkf4hj$*j(1koll+h*#q25d5ailuvr2!%+#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['3.6.110.80']
 
 
 # Application definition
